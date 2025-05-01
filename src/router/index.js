@@ -1,8 +1,9 @@
-import { createMemoryHistory, createRouter } from 'vue-router'
+import { createWebHistory, createRouter } from 'vue-router'
 import BookingsView from "@/views/BookingsView.vue";
 import CleaningsView from "@/views/CleaningsView.vue";
 import RoomsView from "@/views/RoomsView.vue";
 import DashboardView from "@/views/DashboardView.vue";
+import LoginView from "@/views/LoginView.vue";
 
 const routes = [
     {
@@ -24,12 +25,21 @@ const routes = [
         path: "/rooms",
         name: "Rooms",
         component: RoomsView
+    },
+    {
+        path: "/login",
+        name: "Login",
+        component: LoginView
     }
 ]
 
 const router = createRouter({
-    history: createMemoryHistory(),
+    history: createWebHistory(),
     routes
+})
+
+router.beforeEach((to) => {
+    console.log(to);
 })
 
 export default router;

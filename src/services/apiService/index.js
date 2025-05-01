@@ -1,8 +1,10 @@
 import axios from "axios";
 import bookingRoutes from "./routes/bookingRoutes";
+import authRoutes from "@/services/apiService/routes/authRoutes";
 
 const axiosInstance = axios.create();
 const bookings = new bookingRoutes(axiosInstance);
+const auth = new authRoutes(axiosInstance);
 
 function configureService(apiConfig) {
     axiosInstance.defaults.baseURL = (apiConfig.ssl ? 'https' : 'http') + "://" + apiConfig.host + (apiConfig.port !== null ? `:${apiConfig.port}` : null);
@@ -25,6 +27,7 @@ function install(app, useAuth = false, config) {
 
 const apiService = {
     install,
+    auth,
     bookings
 }
 

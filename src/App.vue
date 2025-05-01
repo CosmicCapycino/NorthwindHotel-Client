@@ -1,11 +1,12 @@
 <template>
-  <div class="app">
+  <div class="app" v-if="this.$route.name !== 'Login'">
     <NavBar/>
     <RouterView id="router-view"/>
   </div>
+  <RouterView v-else/>
 </template>
 
-<style>
+<style scoped>
 
 @font-face {
   font-family: 'Quicksand';
@@ -40,6 +41,6 @@ export default {
   name: 'App',
   components: {
     NavBar
-  }
+  },
 }
 </script>

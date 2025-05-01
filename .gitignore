@@ -134,3 +134,9 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+/.idea/.gitignore
+/.idea/encodings.xml
+/.idea/modules.xml
+/.idea/NorthwindHotel-Client.iml
+/.idea/inspectionProfiles/Project_Default.xml
+/.idea/vcs.xml

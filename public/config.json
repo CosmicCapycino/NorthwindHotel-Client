@@ -1,0 +1,7 @@
+{
+  "apiServer": {
+    "host": "localhost",
+    "port": 7020,
+    "ssl": true
+  }
+}
